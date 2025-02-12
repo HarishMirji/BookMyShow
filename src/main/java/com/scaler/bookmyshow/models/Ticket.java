@@ -3,13 +3,14 @@ package com.scaler.bookmyshow.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
 public class Ticket extends BaseModel{
     private int amount;
-    private Data timeOfBooking;
+    private Date timeOfBooking;
     @ManyToMany
     private List<Seat> seats;
     @ManyToOne
@@ -20,4 +21,6 @@ public class Ticket extends BaseModel{
     private List<Payment> payments;
     @Enumerated(EnumType.ORDINAL)
     private TicketStatus status;
+
+
 }
